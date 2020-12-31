@@ -1,0 +1,81 @@
+{
+  "name": "HBSHive.HIVECustomerOnboardingPortal",
+  "version": "0.1.0",
+  "private": true,
+  "license": "COPYRIGHT 2018 HONEYWELL INTERNATIONAL SARL",
+  "jest": {
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.js",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/index.js"
+    ]
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "createcoveragedir": "mkdirp ../../BuildArtifacts/coverage",
+    "movetocoveragedir": "ncp coverage ../../BuildArtifacts/coverage",
+    "buildandtest": "yarn build && yarn test && yarn createcoveragedir && yarn movetocoveragedir",
+    "test": "react-scripts test --watchAll=false --forceExit",
+    "test:coverage": "react-scripts test --coverage  --watchAll=false --forceExit",
+    "eject": "react-scripts eject",
+    "createdockerdir": "mkdirp ../../BuildArtifacts/PrepareForDockerBuild/HBSHive.HIVECustomerOnboardingPortal/app",
+    "copytodockerdir": "ncp build ../../BuildArtifacts/PrepareForDockerBuild/HBSHive.HIVECustomerOnboardingPortal/app",
+    "copydockerfiletodockerdir": "ncp Dockerfile ../../BuildArtifacts/PrepareForDockerBuild/HBSHive.HIVECustomerOnboardingPortal/Dockerfile",
+    "copyhosttodockerdir": "ncp host ../../BuildArtifacts/PrepareForDockerBuild/HBSHive.HIVECustomerOnboardingPortal/app",
+    "publishtodocker": "yarn createdockerdir && yarn copytodockerdir && yarn copydockerfiletodockerdir && yarn copyhosttodockerdir",
+    "lint": "eslint src/**/*.{js}"
+  },
+  "dependencies": {
+    "@azure/msal-browser": "^2.7.0",
+    "axios": "0.20.0",
+    "axios-mock-adapter": "^1.18.2",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "launchdarkly-node-client-sdk": "^1.4.5",
+    "moment": "2.22.2",
+    "node-sass": "4.13.1",
+    "passport": "^0.4.1",
+    "passport-azure-ad": "^4.3.0",
+    "react": "16.13.1",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "16.13.1",
+    "react-redux": "7.2.1",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "3.4.1",
+    "redux": "4.0.5",
+    "redux-mock-store": "^1.5.4",
+    "redux-thunk": "2.3.0",
+    "underscore": "1.11.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.3",
+    "eslint": "6.6.0",
+    "eslint-config-standard": "14.1.1",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-react": "7.20.6",
+    "eslint-plugin-standard": "4.0.1",
+    "jest-fetch-mock": "3.0.3",
+    "mkdirp": "1.0.4",
+    "ncp": "2.0.0"
+  },
+  "resolutions": {
+    "@types/react": "^16.9.46"
+  },
+  "proxy": "http://localhost:8080",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

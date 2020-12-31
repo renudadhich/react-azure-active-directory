@@ -1,0 +1,45 @@
+.subscription-container{
+    width:100%;
+     .subscription-details{
+        margin: 0 auto;
+        padding-top: 10px;
+        width: 60%;
+        .form-content {
+            padding: 20px;
+             .page-title {
+                font-weight: bold;
+                font-size: 1.50rem;
+                margin-bottom: 10px;
+             }
+             .error-success-msg {
+                font-weight: bold;
+                font-size: 1.145rem;
+                padding-bottom: 14px;
+             }
+             .success-msg {
+                color: green;
+                
+             }
+             .error-msg{
+                 color:red;
+             }
+        .text-input{
+            width: 48%;
+            margin-right: 2%;
+            
+            .input-wrap{
+                width:100%;
+                .input-box{
+                    width:100%;   
+                }
+            }
+        }
+        .button-container{
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 15px;
+        }
+    }
+    } 
+   
+}
